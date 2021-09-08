@@ -6,25 +6,37 @@
 
 ## 简介
 
-一个主要靠拼凑而成的个人博客项目，共分为了 [前台](https://github.com/WindSnowLi/vue-ssr-blog)
-、 [后台](https://github.com/WindSnowLi/vue-admin-blog) 、 [api](https://github.com/WindSnowLi/w-blog-api) 三个部分。
+1. 链接
+   * Gitee链接：
+      * [api](https://gitee.com/windsnowli/w-blog-api)： `https://gitee.com/windsnowli/w-blog-api`
 
-1. [api](https://github.com/WindSnowLi/w-blog-api)
-   后端基于 `SpringBoot` 。主要依赖 `mybatis` 、 `fastjson` 、 `DruidDataSource` 、 `Lombok` 、 `java-jwt` 、 `aliyun-sdk-oss`
+      * [前台](https://gitee.com/windsnowli/vue-ssr-blog)： `https://gitee.com/windsnowli/vue-ssr-blog`
 
-   、 `knife4j` 等，数据库使用的是 `MySQL8.0+`
+      * [后台](https://gitee.com/windsnowli/vue-admin-blog)： `https://gitee.com/windsnowli/vue-admin-blog`
 
-2. [前台](https://github.com/WindSnowLi/vue-ssr-blog)
+   * GitHub链接：
+      * [api](https://github.com/WindSnowLi/w-blog-api)： `https://github.com/WindSnowLi/w-blog-api`
+
+      * [前台](https://github.com/WindSnowLi/vue-ssr-blog)： `https://github.com/WindSnowLi/vue-ssr-blog`
+
+      * [后台](https://github.com/WindSnowLi/vue-admin-blog)： `https://github.com/WindSnowLi/vue-admin-blog`
+
+2. 一个简单的的个人博客项目，共分为了 `前台`、 `后台`、 `api`三个部分。
+
+3. api
+   后端基于 `SpringBoot` 。主要依赖 `mybatis` 、 `fastjson` 、 `DruidDataSource` 、 `Lombok` 、 `java-jwt` 、 `aliyun-sdk-oss` 、 `knife4j` 等，数据库使用的是 `MySQL8.0+`
+
+4. 前台
    前台的主要样式是来源于网络上了一个 `BizBlog` 模板，最初来源于哪我不得而知，在原本的基础上改写成了 `nuxtJs` 项目。
-3. [后台](https://github.com/WindSnowLi/vue-admin-blog)
+5. 后台
    后台UI套用的[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，基本是直接拿来用了，想自己定制着实实力不允许。
-4. [示例](https://www.blog.hiyj.cn/)：[绿色食品——菜狗](https://www.blog.hiyj.cn/)
+6. 示例：[绿色食品——菜狗](https://www.blog.hiyj.cn/)
 
 ## 本地启动
 
-### [api](https://github.com/WindSnowLi/w-blog-api)：前台后台请求的api使用的是同一个项目
+### api：前台后台请求的api使用的是同一个项目
 
-1. `git clone https://github.com/WindSnowLi/w-blog-api.git` 克隆项目到本地
+1. `git clone https://gitee.com/WindSnowLi/w-blog-api.git`或`git clone https://github.com/WindSnowLi/w-blog-api.git` 克隆项目到本地
 2. `mvn clean install dependency:tree` 安装依赖
 3. 修改开发环境 `application-dev.yml` 和生产环境 `application-prod.yml` 中的数据库配置信息； `knife4j` 只在开发环境中激活。
 4. 创建数据库配置中指定名称的空数据库，`UTF8`编码
@@ -33,9 +45,9 @@
 7. 访问 `http://127.0.0.1:8888/doc.html` 查看 `api` 文档
 8. *推荐使用IDEA打开项目文件夹自动处理依赖、方便运行*
 
-### [前台](https://github.com/WindSnowLi/vue-ssr-blog)
+### 前台
 
-1. `git clone https://github.com/WindSnowLi/vue-ssr-blog.git` 克隆项目到本地
+1. `git clone https://gitee.com/WindSnowLi/vue-ssr-blog.git`或`git clone https://github.com/WindSnowLi/vue-ssr-blog.git` 克隆项目到本地
 2. `npm install` 安装依赖
 3. 可修改 `config/sitemap.xml` 文件中的 `host` 地址，用于生成访问地图
 4. 可修改 `nuxt.config.js` 中的端口号
@@ -43,9 +55,9 @@
 6. `npm run build` 编译
 7. `npm start` 本地运行
 
-### [后台](https://github.com/WindSnowLi/vue-admin-blog)
+### 后台
 
-1. `git clone https://github.com/WindSnowLi/vue-admin-blog.git` 克隆项目到本地
+1. `git clone https://gitee.com/WindSnowLi/vue-admin-blog.git`或`git clone https://github.com/WindSnowLi/vue-admin-blog.git` 克隆项目到本地
 2. `npm install` 安装依赖
 3. `npm run dev` 使用模拟数据预览界面
 4. 修改 `.env.production` 文件中的 `VUE_APP_BASE_API` 地址为后端 `api` 的地址
