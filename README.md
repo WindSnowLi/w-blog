@@ -102,6 +102,6 @@
 
 ## License
 
-[MIT](https://github.com/WindSnowLi/w-blog-api/blob/master/LICENSE)
+[MIT](https://github.com/WindSnowLi/w-blog/blob/master/LICENSE)
 
 Copyright (c) 2021 WindSnowLi
