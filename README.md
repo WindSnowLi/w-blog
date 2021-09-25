@@ -23,14 +23,12 @@
 
 2. 一个简单的的个人博客项目，共分为了 `前台`、 `后台`、 `api`三个部分。
 
-3. api
-   后端基于 `SpringBoot` 。主要依赖 `mybatis` 、 `fastjson` 、 `DruidDataSource` 、 `Lombok` 、 `java-jwt` 、 `aliyun-sdk-oss` 、 `knife4j` 等，数据库使用的是 `MySQL8.0+`
+   * api: 后端基于 `SpringBoot` 。主要依赖 `Mybatis` 、 `Mybatis-Redis` 、 `Redis` 、 `fastjson` 、 `DruidDataSource` 、 `Lombok` 、 `java-jwt` 、 `aliyun-sdk-oss` 、 `knife4j` 等，数据库使用的是 `MySQL8.0+`
 
-4. 前台
-   前台的主要样式是来源于网络上了一个 `BizBlog` 模板，最初来源于哪我不得而知，在原本的基础上改写成了 `nuxtJs` 项目。
-5. 后台
-   后台UI套用的[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，基本是直接拿来用了，想自己定制着实实力不允许。
-6. 示例：[绿色食品——菜狗](https://www.blog.hiyj.cn/)
+   * 前台: 前台的主要样式是来源于网络上了一个 `BizBlog` 模板，最初来源于哪我不得而知，在原本的基础上改写成了 `nuxtJs` 项目。
+   * 后台: 后台UI套用的[vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)，基本是直接拿来用了，想自己定制着实实力不允许。
+
+3. 示例：[绿色食品——菜狗](https://www.blog.hiyj.cn/)
 
 ## 本地启动
 
@@ -38,11 +36,15 @@
 
 1. `git clone https://gitee.com/WindSnowLi/w-blog-api.git`或`git clone https://github.com/WindSnowLi/w-blog-api.git` 克隆项目到本地
 2. `mvn clean install dependency:tree` 安装依赖
-3. 修改开发环境 `application-dev.yml` 和生产环境 `application-prod.yml` 中的数据库配置信息； `knife4j` 只在开发环境中激活。
-4. 创建数据库配置中指定名称的空数据库，`UTF8`编码
+3. 创建数据库，并设置为`UTF8`编码（`utf8mb4`）
+4. 修改环境设置
+   * 修改开发环境 `application-dev.yml` 和生产环境 `application-prod.yml` 中的数据库配置信息；
+   * 修改 `redis.properties` 中的 `Redis` 相关信息；
+   * 注： `knife4j` 只在开发环境中激活。
+
 5. `mvn clean package -Dmaven.test.skip=true` 跳过测试并生成 `jar` 包
-6. `java -jar 生成的包名.jar` 运行开发配置环境，初次运行会自动初始化数据库
-7. 访问 `http://127.0.0.1:8888/doc.html` 查看 `api` 文档
+6. `java -jar 生成的包名.jar` 运行开发配置环境，初次运行会自动初始化数据库（生产环境可指定加载的配置文件`--spring.profiles.active="prod"`）
+7. 访问 `http://127.0.0.1:9000/doc.html` 查看 `api` 文档
 8. *推荐使用IDEA打开项目文件夹自动处理依赖、方便运行*
 
 ### 前台
@@ -68,41 +70,35 @@
 
 ### 前台
 
-![首页](https://pic.hiyj.cn/images/2021/08/30/8be350dc4ad9f76c10f7daa8f0ec2f83.png)
+![首页](./images/homepage.png)
 
 <br>
 
-![文章详情](https://pic.hiyj.cn/images/2021/08/30/d921a4e9d688c8e42e4cb491e81ea29f.png)
+![文章详情](./images/article-detail.png)
 
 <br>
 
-![友链](https://pic.hiyj.cn/images/2021/08/30/1e6a95dba9dffe2c518fb1114d27f9ef.png)
-
-<br>
-
-![关于信息](https://pic.hiyj.cn/images/2021/08/30/2a71cb94b94aed68d5628ee41beb0359.png)
+![友链](./images/links.png)
 
 ### 后台
 
-![首页](https://pic.hiyj.cn/images/2021/08/30/c058c6879cad0dc8db994a7dc57f1de6.png)
+![首页](./images/dashboard.png)
 
 <br>
 
-![创建文章](https://pic.hiyj.cn/images/2021/08/30/5a9b1e429a934801704cc9ef9526ff60.png)
+![创建文章](./images/create-art.png)
 
 <br>
 
-![管理文章](https://pic.hiyj.cn/images/2021/08/30/b9a4cc395e4e02ff996c198f39c10895.png)
-
-![文章列表](https://pic.hiyj.cn/images/2021/08/30/7e69e00b415213d37034dd49d236d18e.png)
+![管理文章](./images/man-art-list.png)
 
 <br>
 
-![友链管理](https://pic.hiyj.cn/images/2021/08/30/2cd2f03ab3eab5ea0e14a7ced2695d09.png)
+![文章列表](./images/art-list.png)
 
 <br>
 
-![关于信息](https://pic.hiyj.cn/images/2021/08/30/5582f506f1a93b114baef9d9977841ea.png)
+![友链管理](./images/links.png)
 
 ## License
 
