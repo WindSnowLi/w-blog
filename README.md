@@ -98,7 +98,7 @@
 
 <br>
 
-![友链管理](./images/links.png)
+![友链管理](./images/man-links.png)
 
 ## License
 
