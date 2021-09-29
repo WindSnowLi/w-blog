@@ -9,6 +9,7 @@ services:
     depends_on:
       - redis
     container_name: w-blog-api # 容器名称，默认为"工程名称_服务条目名称_序号"
+    command: sh -c "java -jar w-blog.jar --spring.profiles.active=\"prod\"" # 默认加载prod
     networks:
       my-network:
         # 指定IP
