@@ -1,0 +1,9 @@
+# IDE / Editor
+.idea
+.vscode
+.vs
+
+# clone dir
+admin
+blog
+api

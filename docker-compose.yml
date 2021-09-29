@@ -1,0 +1,65 @@
+# 文件及文件夹映射自行设置
+# 描述 Compose 文件的版本信息
+version: "3.8"
+# 定义服务，可以多个
+services:
+  api: # 服务名称
+    build: 
+      context: ./api/src/main/docker
+    depends_on:
+      - redis
+    container_name: w-blog-api # 容器名称，默认为"工程名称_服务条目名称_序号"
+    networks:
+      my-network:
+        # 指定IP
+        ipv4_address: 172.20.0.80
+    ports: # 宿主机与容器的端口映射关系
+      - "9999:9000" # 左边宿主机端口:右边容器端口
+    restart: always
+  blog:
+    build:
+      context: ./blog
+    depends_on:
+      - api
+    container_name: blog
+    networks:
+      my-network:
+        # 指定IP
+        ipv4_address: 172.20.0.81
+    ports:
+      - "3000:3000"
+    restart: always
+  admin:
+    build:
+      context: ./admin
+    depends_on:
+      - api
+    container_name: admin
+    networks:
+      my-network:
+        # 指定IP
+        ipv4_address: 172.20.0.82
+    ports:
+      - "8000:80"
+    restart: always
+  redis:
+    image: redis:latest
+    container_name: redis
+    command:
+      - redis-server
+      - --requirepass
+      - "w-blog"
+      - --bind
+      - "172.20.0.83"
+    networks:
+      my-network:
+        # 指定IP
+        ipv4_address: 172.20.0.83
+    restart: always
+networks:
+  my-network:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.20.0.0/16
+         gateway:  172.20.0.1
